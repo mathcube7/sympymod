@@ -1,11 +1,10 @@
 import types
-import sympy
 import sys
 from .equation import *
 from .pick import *
+from .calculus import *
 
 from functools import wraps
-
 
 
 this_module = sys.modules[__name__]
@@ -17,7 +16,6 @@ def _get_imported_names(module):
 
 
 def _wrap_function(func):
-
     @wraps(func)
     def f(*args, **kwargs):
         if isinstance(args[0], Eq):

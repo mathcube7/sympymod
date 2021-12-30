@@ -1,12 +1,15 @@
 from sympy import Wild
 
 
-def pick(expr, pattern, which):
+def select_by_pattern(expr, pattern, which):
     matches = expr.match(pattern)
     if matches:
         return matches[which]
     return None
 
+
+def select_atoms(expr, atom_type):
+    return list(expr.atoms(atom_type))
 
 a__ = Wild('a')
 b__ = Wild('b')

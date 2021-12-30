@@ -9,7 +9,7 @@ description = 'A more convenient API for pencil and paper calculations with symp
 name = 'sympymod'
 year = '2021'
 url = ''
-version = '0.0.1'
+version = '0.0.2'
 
 setup(
     name=name,

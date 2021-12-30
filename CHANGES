@@ -1,0 +1,3 @@
+Version 0.0.2
+
+- Add integration by parts and patch sympy's Integral class
