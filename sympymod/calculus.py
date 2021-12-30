@@ -38,7 +38,8 @@ def integrate_by_parts(integral, u, vp):
         vp: derivative of v(x)
     """
     integrand, (x_, a_, b_) = integral.args
-    assert integrand == u * vp
+
+    assert integrand.doit() == (u * vp).doit()
     v = Integral(vp, x_).doit()
 
     # If the new integrand contains a leading minus sign,

@@ -19,3 +19,9 @@ class TestCalculus(unittest.TestCase):
         actual = integrate_by_parts(integ, x, exp(-x))
         expected =  a*exp(-a) - b*exp(-b) + Integral(exp(-x), (x, a, b))
         self.assertEqual(expected, actual)
+
+    def test_partial_integrate_gaussian_unevaluated_expr(self):
+        Ii = Integral(t * exp(-t ** 2) / UnevaluatedExpr(t), (t, 0, oo))
+        # raised and exception before fixing the issue:
+        Ii.by_parts(1/t, t*exp(-t**2))
+
